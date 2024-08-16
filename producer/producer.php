@@ -10,13 +10,13 @@ for ($i = 0; $i < 10; $i++) {
     $producer->poll(0);
 }
 
-$topic = $producer->newTopic("test2");
+$topic2 = $producer->newTopic("test2");
 
 for ($i = 0; $i < 100; $i++) {
-    $topic->produce(RD_KAFKA_PARTITION_UA, 0, "Message $i");
+    $topic2->produce(RD_KAFKA_PARTITION_UA, 0, "Message $i");
     $producer->poll(0);
 }
 
 while ($producer->getOutQLen() > 0) {
-    $producer->poll(50);
+    $producer->poll(100);
 }

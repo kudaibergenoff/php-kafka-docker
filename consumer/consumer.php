@@ -4,7 +4,7 @@
     $conf->set('metadata.broker.list', 'kafka:29092');
 
     $consumer = new RdKafka\KafkaConsumer($conf);
-    $consumer->subscribe(['test']);
+    $consumer->subscribe(['test', 'test2']);
 
     echo "Waiting for messages...\n";
     while (true) {
