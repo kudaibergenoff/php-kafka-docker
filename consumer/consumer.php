@@ -1,7 +1,7 @@
 <?php
     $conf = new RdKafka\Conf();
     $conf->set('group.id', 'myConsumerGroup');
-    $conf->set('metadata.broker.list', 'kafka:29092');
+    $conf->set('metadata.broker.list', 'kafka:29092,kafka2:29093');
 
     $consumer = new RdKafka\KafkaConsumer($conf);
     $consumer->subscribe(['test', 'test2']);
